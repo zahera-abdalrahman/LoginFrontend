@@ -1,0 +1,177 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.roles-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+/* ===== Header ===== */
+.roles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.roles-header h2 {
+  font-weight: 700;
+  color: #1e293b;
+}
+.subtitle {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+.btn-soft {
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-soft:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
+
+/* ===== Message ===== */
+.toast-msg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-radius: 12px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.msg-success {
+  background: #dcfce7;
+  color: #15803d;
+}
+.msg-error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ===== Panel + table ===== */
+.panel {
+  background: #fff;
+  border-radius: 18px;
+  padding: 10px 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.users-table thead th {
+  text-align: left;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  padding: 16px 18px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.users-table tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f6f8fb;
+  vertical-align: middle;
+  color: #334155;
+}
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.users-table tbody tr:hover {
+  background: #fafbff;
+}
+.text-muted {
+  color: #94a3b8;
+}
+.empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 28px;
+}
+
+/* ===== Avatar ===== */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-weight: 700;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.uname {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ===== Role badge ===== */
+.role-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.badge-admin {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.badge-emp {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.badge-user {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* ===== Select ===== */
+.role-select {
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  padding: 7px 12px;
+  font-size: 0.88rem;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.role-select:focus {
+  border-color: #6366f1;
+}
+
+/* ===== Save button ===== */
+.btn-save {
+  border: none;
+  background: #10b981;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 0.83rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.35);
+}

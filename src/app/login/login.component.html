@@ -1,0 +1,65 @@
+<section class="vh-100 signup-section">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black signup-card">
+            <div class="card-body py-4 px-4">
+              <div class="row justify-content-center">
+  
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <p class="text-center h2 fw-bold mb-4">Sign up</p>
+  
+                  <form class="mx-1 mx-md-4" [formGroup]="loginForm" (ngSubmit)="logIn()">
+                    <div class="form-row mb-4">
+                      <div class="icon-col">
+                        <i class="fas fa-envelope"></i>
+                      </div>
+                      <div class="input-col">
+                        <input type="email" class="form-control" id="txtEmail" class="form-control"
+                        formControlName="txtEmail" placeholder="Enter your email">
+                        <div *ngIf="loginForm.get('txtEmail')?.touched && loginForm.get('txtEmail')?.invalid" class="text-danger small mt-1">
+                          <div *ngIf="loginForm.get('txtEmail')?.errors?.['required']">Email is required.</div>
+                          <div *ngIf="loginForm.get('txtEmail')?.errors?.['email']">Invalid email format.</div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="form-row mb-4 password-row">
+                      <div class="icon-col">
+                        <i class="fas fa-lock"></i>
+                      </div>
+                      <div class="input-col">
+                        <input [type]="showPassword ? 'text' : 'password'" id="txtPassword" class="form-control" formControlName="txtPassword" placeholder="Enter your password">
+                        <div *ngIf="loginForm.get('txtPassword')?.touched && loginForm.get('txtPassword')?.invalid" class="text-danger small mt-1">
+                          <div *ngIf="loginForm.get('txtPassword')?.errors?.['required']">Password is required.</div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-outline-secondary btn-sm show-btn" (click)="togglePasswordVisibility('password')">{{ showPassword ? 'Hide' : 'Show' }}
+                      </button>
+                    </div>
+  
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="loginForm.invalid">
+                        Login
+                      </button>
+                    </div>
+                    <div class="text-center mt-2">
+                      <span>Don't have an account?</span>
+                      <a routerLink="/Register" class="btn btn-link">Sign Up</a>
+                    </div>
+                  </form>
+                </div>
+  
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                       class="img-fluid" alt="Sample image">
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

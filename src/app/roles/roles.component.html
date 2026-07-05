@@ -1,0 +1,69 @@
+<div class="roles-wrapper">
+
+  <!-- Header -->
+  <div class="roles-header">
+    <div>
+      <h2 class="mb-1">Manage Roles</h2>
+      <span class="subtitle">Assign roles to users — only Admin can do this</span>
+    </div>
+    <button class="btn-soft" (click)="goToDashboard()">
+      <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </button>
+  </div>
+
+  <!-- Message -->
+  <div *ngIf="message"
+       class="toast-msg"
+       [ngClass]="isError ? 'msg-error' : 'msg-success'">
+    <i class="fas" [ngClass]="isError ? 'fa-circle-exclamation' : 'fa-circle-check'"></i>
+    {{ message }}
+  </div>
+
+  <!-- Users panel -->
+  <div class="panel">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Email</th>
+          <th>Current Role</th>
+          <th>Change Role</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>
+            <span class="avatar">{{ (user.firstName || user.email || '?').charAt(0) }}</span>
+            <span class="uname">{{ user.firstName }} {{ user.lastName }}</span>
+          </td>
+          <td class="text-muted">{{ user.email }}</td>
+          <td>
+            <span class="role-badge"
+                  [ngClass]="{
+                    'badge-admin': user.role === 'Admin',
+                    'badge-emp': user.role === 'Employee',
+                    'badge-user': user.role === 'User'
+                  }">
+              {{ user.role }}
+            </span>
+          </td>
+          <td>
+            <select class="role-select" [(ngModel)]="user.role">
+              <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+            </select>
+          </td>
+          <td>
+            <button class="btn-save" (click)="saveRole(user)">
+              <i class="fas fa-floppy-disk"></i> Save
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="users.length === 0">
+          <td colspan="5" class="empty">No users found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
